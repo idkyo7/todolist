@@ -7,7 +7,7 @@ function TodoItem({todo}) {
     const [editable, setEditable] = useState(false)
     const [title, setTitle] = useState(todo.title)
     return (
-        <div>
+        <div className="item-container">
             <div className="row mx-2 align-items-center">
                 <div style={{fontSize: 14}}>{todo.createdAt}</div>
                 <div className="col" style={{fontSize: 16}}>

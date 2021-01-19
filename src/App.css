@@ -1,3 +1,9 @@
+body {
+  background-color: #473B6B !important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p {
+  color: #ffffff;
+}
 .App {
   text-align: center;
 }
@@ -35,4 +41,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.add-input {
+  background-color: #127495 !important;
+  color: #7FBDD7 !important;
+}
+.add-input::placeholder {
+  color: #7FBDD7 !important;
+}
+.btn-add {
+  background-color: #D6A210 !important;
+  color: #FFF4C6 !important;
+  font-weight: bold !important;
+}
+.item-container {
+  background-color: #D226B9 !important;
+  border-radius: 5px !important;
+  color: #FAC8F9 !important;
+  font-weight: bold !important;
+  margin-bottom: 10px !important;
+  padding: 5px 10px !important;
 }

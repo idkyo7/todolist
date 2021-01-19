@@ -11,9 +11,10 @@ function TodoInput() {
             <div className="row m-2">
                 <input 
                     type="text" 
-                    className="col form-control"
+                    className="col form-control add-input"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    placeholder="Add New Todo-list"
                 />
                 <button 
                     onClick={() => {
@@ -28,8 +29,8 @@ function TodoInput() {
                         ))
                         setName('');
                     }}
-                    className="btn btn-primary mx-2">
-                        ADD
+                    className="btn btn-primary mx-2 btn-add">
+                        ADD NEW TODOLIST
                 </button>
             </div>
         </div>
