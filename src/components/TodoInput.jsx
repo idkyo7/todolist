@@ -20,7 +20,10 @@ function TodoInput() {
                         dispatch(addTodo(
                             {
                                 id: uuid(),
-                                name: name,
+                                title: name,
+                                description: "lorem ipsum",
+                                status: 0,
+                                createdAt: "2019-11-15 04:00"
                             }
                         ))
                         setName('');

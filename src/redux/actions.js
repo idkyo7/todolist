@@ -24,3 +24,12 @@ export function updateTodo(todo) {
         payload: todo,
     }
 }
+
+export const FETCH_TODO = "FETCH_TODO";
+
+export function fetchTodo(url) {
+    return {
+        type: FETCH_TODO,
+        payload: url,
+    }
+}

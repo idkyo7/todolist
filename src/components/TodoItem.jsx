@@ -5,13 +5,13 @@ import { deleteTodo, updateTodo } from '../redux/actions'
 function TodoItem({todo}) {
     let dispatch = useDispatch()
     const [editable, setEditable] = useState(false)
-    const [title, setTitle] = useState(todo.name)
+    const [title, setTitle] = useState(todo.title)
     return (
         <div>
             <div className="row mx-2 align-items-center">
-                <div>{todo.id.length > 1 ? todo.id[2] : todo.id}</div>
+                <div>{todo.createdAt}</div>
                 <div className="col">
-                    <h4>
+                    <h5>
                         {editable ? 
                         <input 
                             type="text" 
@@ -20,8 +20,8 @@ function TodoItem({todo}) {
                             onChange={(e) => setTitle(e.target.value)} 
                             value={title}
                         /> 
-                        : todo.name}
-                    </h4>
+                        : todo.title}
+                    </h5>
                 </div>
                 <button 
                     className="btn btn-primary m-2"
@@ -29,7 +29,7 @@ function TodoItem({todo}) {
                             dispatch(updateTodo(
                                 {
                                     ...todo, 
-                                    name: title
+                                    title: title
                                 }
                             ))
                             if(editable) {
@@ -41,11 +41,31 @@ function TodoItem({todo}) {
                 >
                     {editable ? "Update" : "Edit"}
                 </button>
-                <button
-                    onClick={() => dispatch(deleteTodo(todo.id))}
-                    className="btn btn-danger m-2">
-                        Delete
-                </button>
+                {
+                    todo.status !== 1 && (
+                    <button
+                        onClick={() => dispatch(deleteTodo(todo.id))}
+                        className="btn btn-danger m-2">
+                            Delete
+                    </button>
+                    )
+                }
+                {
+                    todo.status !== 1 ? (
+                    <button
+                        onClick={() => dispatch(updateTodo(
+                            {
+                                ...todo, 
+                                status: 1
+                            }
+                        ))}
+                        className="btn btn-warning m-2">
+                            Mark as done
+                    </button>
+                    ) : (
+                        <button className="btn btn-success">Done Already</button>
+                    )
+                }
             </div>
         </div>
     )
