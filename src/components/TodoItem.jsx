@@ -9,9 +9,8 @@ function TodoItem({todo}) {
     return (
         <div>
             <div className="row mx-2 align-items-center">
-                <div>{todo.createdAt}</div>
-                <div className="col">
-                    <h5>
+                <div style={{fontSize: 14}}>{todo.createdAt}</div>
+                <div className="col" style={{fontSize: 16}}>
                         {editable ? 
                         <input 
                             type="text" 
@@ -21,10 +20,9 @@ function TodoItem({todo}) {
                             value={title}
                         /> 
                         : todo.title}
-                    </h5>
                 </div>
                 <button 
-                    className="btn btn-primary m-2"
+                    className="btn btn-sm btn-primary m-2"
                     onClick={() => {
                             dispatch(updateTodo(
                                 {
@@ -45,7 +43,7 @@ function TodoItem({todo}) {
                     todo.status !== 1 && (
                     <button
                         onClick={() => dispatch(deleteTodo(todo.id))}
-                        className="btn btn-danger m-2">
+                        className="btn btn-sm btn-danger m-2">
                             Delete
                     </button>
                     )
@@ -59,11 +57,11 @@ function TodoItem({todo}) {
                                 status: 1
                             }
                         ))}
-                        className="btn btn-warning m-2">
+                        className="btn btn-sm btn-warning m-2">
                             Mark as done
                     </button>
                     ) : (
-                        <button className="btn btn-success">Done Already</button>
+                        <button className="btn btn-sm btn-success">Done Already</button>
                     )
                 }
             </div>

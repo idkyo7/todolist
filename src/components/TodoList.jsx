@@ -19,15 +19,27 @@ function TodoList() {
         }, 1000);
     }, []);
 
-    console.log(todos)
-
     return (
         <div className="my-4">
-            {
-                status === 'Ready' && todos.length > 0 && todos.map(todo => (
-                    <TodoItem key={todo.id} todo={todo}/>
-                ))
-            }
+            <div className="row">
+                <div className="col-md-6">
+                    <h4 className="mb-3">Completed</h4>
+                {
+                    status === 'Ready' && todos.length > 0 && todos.filter(todo => todo.status === 1).map(todo => (
+                        <TodoItem key={todo.id} todo={todo}/>
+                    ))
+                }
+                </div>
+                <div className="col-md-6">
+                    <h4 className="mb-3">On Progress</h4>
+                {
+                    status === 'Ready' && todos.length > 0 && todos.filter(todo => todo.status === 0).map(todo => (
+                        <TodoItem key={todo.id} todo={todo}/>
+                    ))
+                }
+                </div>
+            </div>
+            
         </div>
     )
 }
