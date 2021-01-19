@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Simple Todolist App from Create React App Base Template
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## First Thing First
+
+run `yarn install` to add all depedencies that required for this project
 
 ## Available Scripts
 
